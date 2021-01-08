@@ -7,8 +7,8 @@
 5. The application will be available in browser URL localhost:8081
 
 There are two user roles
-1. ADMIN  is able to login to tehe app and uppload/download files
-2. USER   is able to login to tehe app but now able to upload/download files
+1. ADMIN  is able to login to the app and uppload/download files
+2. USER   is able to login to the app but now able to upload/download files
 
 ADMIN group ids :  user2, user3
 
