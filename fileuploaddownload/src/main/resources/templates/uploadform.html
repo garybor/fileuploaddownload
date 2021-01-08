@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Upload file</title>
+    <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+    <h1>You can upload and view files!</h1>
+    <div class="alert alert-success" role="alert">
+        <div th:if="${message}">
+            <h1 th:text="${message}"/>
+        </div>
+    </div>
+    <form class="form-signin" method="POST" enctype="multipart/form-data" action="/upload">
+
+        <h1 class="form-signing-heading">File to upload: </h1>
+        <input type="file" name="file" class="form-control"/>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Upload">Upload File</button>
+    </form>
+    <h1 class="form-signing-heading">You can view uploaded files!</h1>
+    <form class="form-signin" method="GET" action="/download">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">View uploaded File</button>
+    </form>
+    <form class="form-signin" method="GET" action="/logout">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log out</button>
+    </form>
+</div>
+</body>
+</html>

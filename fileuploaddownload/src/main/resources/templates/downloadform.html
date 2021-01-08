@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Download File</title>
+    <style>
+   h1 {text-align: center;}
+   p {text-align: center;}
+   div {text-align: center;}
+
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1 class="form-signin-heading">You can download the uploaded files</h1>
+        <ul>
+            <li th:each="file : ${files}">
+                <a th:href="${file}" th:text="${file}"/>
+            </li>
+        </ul>
+    </div>
+    <form class="form-signin" method="GET" action="/">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Home</button>
+    </form>
+    <form class="form-signin" method="GET" action="/logout">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log out</button>
+    </form>
+</div>
+</body>
+</html>
